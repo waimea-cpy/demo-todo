@@ -1,0 +1,375 @@
+:root {
+    --accent-col:     #3f51b5;
+    --accent-light:   #7986cb;
+    --accent-lighter: #e8eaf6;
+
+    --contrast: #ff5722;
+
+    --back-main:  #cfd8dc;
+    --back-card:  #fff;
+    --back-panel: #263238f0;
+
+    --text-col: #263238;
+    --text-inv: #fff;
+
+    --shadow:       0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
+    --shadow-small: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
+
+    --pri-1: #f44336;
+    --pri-2: #ff9800;
+    --pri-3: #ffeb3b;
+    --pri-4: #4caf50;
+    --pri-5: #2196F3;
+
+    --good: #33691e;
+    --bad:  #b71c1c;
+}
+
+
+/* main, header, nav, div, ul, ol, li, h1, h2, h3 {
+    outline: 1px solid red;
+} */
+
+
+html,
+body {
+    font-family: system-ui, sans-serif;
+    font-size:   14px;
+    background:  var(--back-main);
+    color:       var(--text-col);
+}
+
+
+body {
+    min-height: 100vh;
+}
+
+
+a {
+    text-decoration: none;
+    color:           var(--text-col);
+}
+
+h2 {
+    font-size:     2.2rem;
+    margin-bottom: 2rem;
+    color:         var(--accent-col);
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color:           var(--accent-col);
+    text-decoration: underline;
+}
+
+a:hover {
+    color: var(--contrast);
+}
+
+
+#main-header {
+    display:         flex;
+    justify-content: space-between;
+    align-items:     center;
+    flex-wrap:       wrap;
+    gap:             1rem;
+
+    position: sticky;
+    top:      0;
+    z-index:  99;
+
+    padding:    1rem;
+    background: var(--accent-col);
+    color:      var(--text-col);
+    box-shadow: var(--shadow);
+}
+
+#main-header h1,
+#main-header h1 a {
+    font-size:       1.8rem;
+    color:           var(--text-inv);
+    text-decoration: none;
+}
+
+#main-header h1 {
+    flex: 1;
+}
+
+
+
+#user-info {
+    color:     var(--text-inv);
+    font-size: 1.3rem;
+}
+
+
+
+#main-search {
+    flex:            1;
+    display:         flex;
+    gap:             0.5rem;
+    align-items:     center;
+    justify-content: flex-end;
+    margin:          0;
+}
+
+#main-search input[type=image] {
+    width:      2rem;
+    height:     2rem;
+    padding:    0;
+    background: none;
+    border:     none;
+    outline:    none;
+}
+
+#main-search input[type=text] {
+    border-radius: 2rem;
+    border:        none;
+    width:         0rem;
+    padding:       0;
+    transition:    all 250ms;
+}
+
+#main-search:is(:hover, :focus-within) input[type=text] {
+    padding: 0.1rem 1rem;
+    width:   15rem;
+}
+
+
+#main-nav img {
+    width:  2rem;
+    height: 2rem;
+}
+
+#main-nav input {
+    display: none;
+}
+
+#main-nav ul {
+    position:       fixed;
+    right:          0;
+    top:            0;
+    bottom:         0;
+    min-width:      10rem;
+    padding:        1rem;
+    background:     var(--back-panel);
+    box-shadow:     var(--shadow);
+    display:        flex;
+    flex-direction: column;
+    gap:            1rem;
+    z-index:        999;
+}
+
+#main-nav a {
+    color:           var(--text-inv);
+    font-size:       1.5rem;
+    text-decoration: none;
+}
+
+#main-nav a:hover {
+    text-decoration: underline;
+}
+
+#main-nav input:not(:checked)~ul {
+    display: none;
+}
+
+
+
+main {
+    padding: 1.5rem 1rem 5rem;
+
+    max-width:    30rem;
+    margin-left:  auto;
+    margin-right: auto;
+}
+
+
+#new-task {
+    position: fixed;
+    bottom:   1rem;
+    right:    3vw;
+    z-index:  99;
+
+    width:  4rem;
+    height: 4rem;
+
+    background:    var(--accent-col);
+    color:         var(--text-col);
+    border-radius: 4rem;
+    box-shadow:    var(--shadow);
+}
+
+#new-task a {
+    display: block;
+    padding: 0.5rem;
+}
+
+#new-task img {
+    width:  100%;
+    height: 100%;
+}
+
+
+
+.card {
+    background:       var(--back-card);
+    color:            var(--text-col);
+    padding:          1rem;
+    /* border-radius: 0.4rem; */
+    box-shadow:       var(--shadow);
+}
+
+.card h2 {
+    font-size:     1.8rem;
+    margin-bottom: 2rem;
+    color:         var(--accent-col);
+}
+
+.card h3 {
+    font-size:     1.5rem;
+    margin-bottom: 1rem;
+}
+
+.card label {
+    display:          block;
+    font-size:        1.1rem;
+    /* font-style:    italic; */
+    color:            var(--accent-light);
+    /* border-bottom: 1px solid var(--accent-lighter); */
+    margin-bottom:    0.3rem;
+    padding-bottom:   0.2rem;
+}
+
+.card label:not(:first-of-type) {
+    margin-top: 1.5rem;
+}
+
+.card .controls {
+    margin:          2rem 0 1rem;
+    display:         flex;
+    justify-content: space-evenly;
+}
+
+.card .controls a,
+.card .controls button,
+.card .controls input[type=submit] {
+    display:    block;
+    padding:    0.5rem 1rem;
+    color:      var(--text-inv);
+    background: var(--accent-col);
+    border:     none;
+    box-shadow: var(--shadow-small);
+}
+
+.card .controls a:hover,
+.card .controls button:hover,
+.card .controls input[type=submit]:hover {
+    filter:     brightness(1.3);
+    box-shadow: var(--shadow);
+}
+
+.card .controls img {
+    width:  2rem;
+    height: 2rem;
+}
+
+.card .controls .good {
+    background: var(--good);
+}
+
+.card .controls .danger {
+    background: var(--bad);
+}
+
+
+li.task {
+    position:      relative;
+    margin-bottom: 1rem;
+    padding:       0.75rem 4rem 0.75rem 1rem;
+    border-left:   0.5rem solid var(--back-card);
+}
+
+li.task h3 {
+    margin-bottom: 0.25rem;
+}
+
+li.task.priority-1 {
+    border-color: var(--pri-1);
+}
+
+li.task.priority-2 {
+    border-color: var(--pri-2);
+}
+
+li.task.priority-3 {
+    border-color: var(--pri-3);
+}
+
+li.task.priority-4 {
+    border-color: var(--pri-4);
+}
+
+li.task.priority-5 {
+    border-color: var(--pri-5);
+}
+
+
+
+
+div.info {
+    display:         flex;
+    justify-content: space-between;
+    color:           var(--accent-light);
+}
+
+span.due-date.today {
+    font-weight: bold;
+}
+
+span.due-date.late {
+    font-weight: bold;
+    color:       red;
+}
+
+div.more {
+    position: absolute;
+    top:      calc(50% - 1rem);
+    right:    0.5rem;
+    width:    2rem;
+    height:   2rem;
+}
+
+div.more img {
+    width:  100%;
+    height: 100%;
+}
+
+
+
+form {
+    margin-bottom: 2rem;
+}
+
+input,
+textarea {
+    display:    block;
+    width:      100%;
+    font-size:  1.2rem;
+    padding:    0.3rem 0.5rem;
+    background: var(--accent-lighter);
+    border:     1px solid var(--accent-light);
+}
+
+input[type=number],
+input[type=date],
+input[type=submit] {
+    width: auto;
+}
+
+textarea {
+    min-height: 8rem;
+}

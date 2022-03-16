@@ -24,22 +24,22 @@ Site has a simple but responsive UI, including:
 
 Task List
 
-![Task List](images/ui-list.png)
+![Task List](ui/ui-list.png)
 
 Task View
 
-![Task View](images/ui-view.png)
+![Task View](ui/ui-view.png)
 
 Task Edit
 
-![Task Edit](images/ui-edit.png)
+![Task Edit](ui/ui-edit.png)
 
 Search
 
-![Search](images/ui-search.png)
+![Search](ui/ui-search.png)
 
 Menu
 
-![Menu](images/ui-menu.png)
+![Menu](ui/ui-menu.png)
 
 
